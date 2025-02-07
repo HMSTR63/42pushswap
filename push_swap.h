@@ -6,7 +6,7 @@
 /*   By: sojammal <sojammal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/01 20:20:12 by sojammal          #+#    #+#             */
-/*   Updated: 2025/02/06 23:45:16 by sojammal         ###   ########.fr       */
+/*   Updated: 2025/02/07 17:32:04 by sojammal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,7 +76,8 @@ void    ft_index_stack(t_stack *stack_a, int size);
 void    ft_assign_pos(t_stack **stack_a, t_stack **stack_b);
 void    ft_cost(t_stack **stack_a, t_stack **stack_b);
 void    ft_cheapest(t_stack **stack_a, t_stack **stack_b);
-
+void	ft_best_move(t_stack **stack_a, t_stack **stack_b, int a_cost, int b_cost);
+void    ft_positon(t_stack **stack);
 
 
 #endif

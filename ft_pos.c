@@ -6,13 +6,13 @@
 /*   By: sojammal <sojammal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/06 23:06:38 by sojammal          #+#    #+#             */
-/*   Updated: 2025/02/06 23:30:34 by sojammal         ###   ########.fr       */
+/*   Updated: 2025/02/07 18:47:34 by sojammal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-static void    ft_positon(t_stack **stack)
+void    ft_positon(t_stack **stack)
 {
     t_stack *tmp;
     int i;
@@ -22,10 +22,11 @@ static void    ft_positon(t_stack **stack)
     while (tmp)
     {
         tmp->pos = i;
-        i++;
         tmp = tmp->next;
+        i++;
     }
 }
+
 static int ft_target(t_stack **stack_a, int b_index, int target_index, int target_pos)
 {
     t_stack *tmp;
@@ -38,6 +39,7 @@ static int ft_target(t_stack **stack_a, int b_index, int target_index, int targe
             target_index = tmp->index;
             target_pos = tmp->pos;
         }
+        tmp = tmp->next;
     }
     if (target_index == INT_MAX)
     {

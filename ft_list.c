@@ -6,7 +6,7 @@
 /*   By: sojammal <sojammal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/01 22:16:40 by sojammal          #+#    #+#             */
-/*   Updated: 2025/02/06 23:33:31 by sojammal         ###   ########.fr       */
+/*   Updated: 2025/02/07 19:06:38 by sojammal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,10 +29,12 @@ int ft_size(t_stack *stack)
     int size;
 
     size = 0;
+    if (!stack)
+        return (0);
     while (stack)
     {
-        size++;
         stack = stack->next;
+        size++;
     }
     return (size);
 }
