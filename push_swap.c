@@ -6,7 +6,7 @@
 /*   By: sojammal <sojammal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/02 00:14:25 by sojammal          #+#    #+#             */
-/*   Updated: 2025/02/07 17:32:12 by sojammal         ###   ########.fr       */
+/*   Updated: 2025/02/08 15:42:20 by sojammal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,11 +21,27 @@ static void ft_push_swap(t_stack **stack_a, t_stack **stack_b, int size)
 	else if (size > 3 && !ft_is_sorted(*stack_a))
 		ft_sort(stack_a, stack_b);
 }
+
+static void free_arr(char **v)
+{
+	int i = 0;
+	while (v[i])
+	{
+		free(v[i]);
+		i++;
+	}
+	free(v);
+}
+// void	f()
+// {
+// 	system("leaks push_swap");
+// }
 int main(int c, char **v)
 {
+	// atexit(f);	
 	t_stack *stack_a;
 	t_stack *stack_b;
-	char	**str;
+	char	**str = NULL;
 
 	stack_a = NULL;
 	stack_b = NULL;
@@ -34,10 +50,11 @@ int main(int c, char **v)
 		str = ft_stack(v);
 		ft_parsing(str);
 		ft_fill_stack(str, &stack_a);
+		free_arr(str);
 		ft_index_stack(stack_a, ft_size(stack_a) + 1);
 		ft_push_swap(&stack_a, &stack_b, ft_size(stack_a));
 		ft_free_stack(&stack_a);
 		ft_free_stack(&stack_b);
 	}
-	return (1);
+	return (0);
 }

@@ -9,10 +9,10 @@ INCLUDE = push_swap.h
 all: $(NAME)
 
 $(NAME): $(OBJ)
-	$(CC) $(CFLAGS) $(OBJ) -o $(NAME)
+	$(CC) $(CFLAGS) -g $(OBJ) -o $(NAME)
 
 %.o: %.c $(INCLUDE)
-	$(CC) $(CFLAGS) -c $< -o $@
+	$(CC) $(CFLAGS) -c -g $< -o $@
 
 clean:
 	$(RM) $(OBJ)

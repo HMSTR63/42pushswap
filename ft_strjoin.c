@@ -6,7 +6,7 @@
 /*   By: sojammal <sojammal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/02 15:23:57 by sojammal          #+#    #+#             */
-/*   Updated: 2025/02/02 21:16:21 by sojammal         ###   ########.fr       */
+/*   Updated: 2025/02/08 15:00:55 by sojammal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,7 +83,7 @@ static size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 	}
 	return (dstl + srcl);
 }
-char	*ft_strjoin(const char *s1, const char *s2)
+char	*ft_strjoin(char *s1, const char *s2)
 {
 	char	*list;
 	size_t	p1;
@@ -102,5 +102,6 @@ char	*ft_strjoin(const char *s1, const char *s2)
 		return (NULL);
 	ft_strlcpy(list, s1, p1 + 1);
 	ft_strlcat(list, s2, p1 + p2 + 1);
+	free(s1);
 	return (list);
 }

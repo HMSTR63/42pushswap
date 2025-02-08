@@ -6,7 +6,7 @@
 /*   By: sojammal <sojammal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/01 20:20:12 by sojammal          #+#    #+#             */
-/*   Updated: 2025/02/07 17:32:04 by sojammal         ###   ########.fr       */
+/*   Updated: 2025/02/08 15:01:21 by sojammal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,7 @@ size_t  ft_strlcpy(char *dst, const char *src, size_t dstsize);
 int ft_abs(int n);
 
 // parsing
-char	*ft_strjoin(const char *s1, const char *s2);
+char	*ft_strjoin(char *s1, const char *s2);
 void    ft_parsing(char **v);
 char    **ft_stack(char **v);
 int     ft_atoi(const char *str);
