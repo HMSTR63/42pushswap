@@ -6,26 +6,19 @@
 /*   By: sojammal <sojammal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/02 15:13:22 by sojammal          #+#    #+#             */
-/*   Updated: 2025/02/09 00:47:13 by sojammal         ###   ########.fr       */
+/*   Updated: 2025/02/10 01:07:59 by sojammal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-static void	ft_check_input(char *v)
+
+static int ft_is_full_space(char *s)
 {
-	int	i;
-	int flag;
-	
-	i = 0;
-	flag = 0;
-	while (v[i])
-	{
-		if (v[i] >= '0' && v[i] <= '9')
-			flag = 1;
-		i++;
-	}
-	if (flag == 0)
-		ft_error();
+	while (*s == ' ')
+		s++;
+	if (*s == '\0')
+		return (1);
+	return (0);
 }
 static char	*ft_join_args(char **v)
 {
@@ -36,7 +29,8 @@ static char	*ft_join_args(char **v)
 	tmp = ft_strdup("");
 	while (v[i])
 	{
-		ft_check_input(v[i]);
+		if (ft_is_full_space(v[i]))
+			return (NULL);
 		tmp = ft_strjoin(tmp, v[i]);
 		tmp = ft_strjoin(tmp, " ");
 		i++;

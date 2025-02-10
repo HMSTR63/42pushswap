@@ -6,7 +6,7 @@
 /*   By: sojammal <sojammal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/02 00:15:12 by sojammal          #+#    #+#             */
-/*   Updated: 2025/02/09 00:46:36 by sojammal         ###   ########.fr       */
+/*   Updated: 2025/02/10 01:11:00 by sojammal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,8 +68,7 @@ static int  ft_is_duplicated(char **v)
     }
     return (1);
 }
-
-static int ft_is_space(char **v)
+static int  ft_is_space(char **v)
 {
     int i;
     int j;

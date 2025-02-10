@@ -6,7 +6,7 @@
 /*   By: sojammal <sojammal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/02 17:08:07 by sojammal          #+#    #+#             */
-/*   Updated: 2025/02/02 22:29:25 by sojammal         ###   ########.fr       */
+/*   Updated: 2025/02/10 00:29:36 by sojammal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,6 @@
 int	ft_atoi(const char *str)
 {
 	long	res;
-	int		stor;
 	int		i;
 	int		sign;
 
@@ -31,7 +30,6 @@ int	ft_atoi(const char *str)
 	}
 	while (str[i] && ft_is_digit(str[i]))
 	{
-		stor = res;
 		res = (res * 10) + (str[i++] - '0');
 		if ((res * sign) > 2147483647 || (res * sign) < -2147483648)
 			ft_error();
