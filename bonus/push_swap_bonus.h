@@ -6,7 +6,7 @@
 /*   By: sojammal <sojammal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/01 20:20:12 by sojammal          #+#    #+#             */
-/*   Updated: 2025/02/17 20:21:49 by sojammal         ###   ########.fr       */
+/*   Updated: 2025/02/17 23:58:46 by sojammal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,16 @@
 # include <stdlib.h>
 # include <unistd.h>
 # include <limits.h>
+
+
+// get_next_line
+# ifndef BUFFER_SIZE
+#  define BUFFER_SIZE 63
+# endif
+
+char	*get_next_line(int fd);
+int		len_at_newline(char *buffer, int n);
+char	*ft_strchr(char *s, int c);
 
 typedef struct s_stack
 {
@@ -43,14 +53,18 @@ void    ft_rrb(t_stack **stack_b);
 void    ft_rrr(t_stack **stack_a, t_stack **stack_b);
 
 // utils
+char	*ft_gnl_strdup(char *s);
 void    ft_putstr_fd(char *str, int fd);
 void	ft_putchar_fd(char c, int fd);
 int     ft_is_digit(char c);
 int     ft_is_signed(char c);
-size_t  ft_strlen(const char *s);
+int  ft_strlen(const char *s);
 char    *ft_strdup(const char *s1);
 size_t  ft_strlcpy(char *dst, const char *src, size_t dstsize);
 int ft_abs(int n);
+int ft_strcmp(const char *s1, const char *s2);
+void ft_read(char *line, t_stack **stack_a, t_stack **stack_b);
+void ft_free_stack(t_stack **stack);
 
 // parsing
 char	*ft_strjoin(char *s1, const char *s2);
@@ -60,24 +74,14 @@ int     ft_atoi(const char *str);
 char    **ft_split(const char *s, char c);
 int     ft_is_sorted(t_stack *stack);
 void ft_error(void);
+
 // stack
 void    ft_fill_stack(char **str, t_stack **stack);
-void    ft_free_stack(t_stack **stack);
+void    ft_lst_add_back(t_stack **lst, t_stack *new);
+t_stack *ft_lst_new(int value);
 t_stack *ft_last(t_stack *stack);
 t_stack *ft_before_last(t_stack *stack);
-t_stack *ft_lst_new(int value);
-int     ft_size(t_stack *stack);
-void    ft_lst_add_back(t_stack **stack, t_stack *new);
-
-// sort
-void    ft_sort_three(t_stack **stack_a);
-void    ft_sort(t_stack **stack_a, t_stack **stack_b);
-void    ft_index_stack(t_stack *stack_a, int size);
-void    ft_assign_pos(t_stack **stack_a, t_stack **stack_b);
-void    ft_cost(t_stack **stack_a, t_stack **stack_b);
-void    ft_cheapest(t_stack **stack_a, t_stack **stack_b);
-void	ft_best_move(t_stack **stack_a, t_stack **stack_b, int a_cost, int b_cost);
-void    ft_positon(t_stack **stack);
+char	**ft_stack(char **v);
 
 
 #endif 

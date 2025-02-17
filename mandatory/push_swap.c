@@ -6,14 +6,11 @@
 /*   By: sojammal <sojammal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/02 00:14:25 by sojammal          #+#    #+#             */
-/*   Updated: 2025/02/17 20:13:00 by sojammal         ###   ########.fr       */
+/*   Updated: 2025/02/17 23:10:07 by sojammal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
-
-
 
 static void ft_push_swap(t_stack **stack_a, t_stack **stack_b, int size)
 {
