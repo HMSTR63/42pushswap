@@ -6,11 +6,14 @@
 /*   By: sojammal <sojammal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/02 00:14:25 by sojammal          #+#    #+#             */
-/*   Updated: 2025/02/10 18:22:33 by sojammal         ###   ########.fr       */
+/*   Updated: 2025/02/17 20:13:00 by sojammal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+
+
 
 static void ft_push_swap(t_stack **stack_a, t_stack **stack_b, int size)
 {
@@ -49,9 +52,11 @@ int main(int c, char **v)
 	{
 		str = ft_stack(v);
 		ft_parsing(str);
+		// if (!str)
+		// 	return (1);
 		ft_fill_stack(str, &stack_a);
 		free_arr(str);
-		ft_index_stack(stack_a, ft_size(stack_a) + 1);
+		ft_index_stack(stack_a, ft_size(stack_a));
 		ft_push_swap(&stack_a, &stack_b, ft_size(stack_a));
 		ft_free_stack(&stack_a);
 		ft_free_stack(&stack_b);

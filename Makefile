@@ -1,10 +1,10 @@
 NAME = push_swap
-SRC = ft_atoi.c ft_best_move.c ft_cost.c ft_fill.c ft_list.c ft_parsing_utils.c ft_parsing.c ft_pos.c ft_push.c ft_reverse_rotate.c ft_rotate.c ft_sort_three.c ft_sort.c ft_split.c ft_stack.c ft_strjoin.c ft_swap.c push_swap_utils.c push_swap.c  
+SRC = mandatory/ft_atoi.c mandatory/ft_best_move.c mandatory/ft_cost.c mandatory/ft_fill.c mandatory/ft_list.c mandatory/ft_parsing_utils.c mandatory/ft_parsing.c mandatory/ft_pos.c mandatory/ft_push.c mandatory/ft_reverse_rotate.c mandatory/ft_rotate.c mandatory/ft_sort_three.c mandatory/ft_sort.c mandatory/ft_split.c mandatory/ft_stack.c mandatory/ft_strjoin.c mandatory/ft_swap.c mandatory/push_swap_utils.c mandatory/push_swap.c  
 OBJ = $(SRC:%.c=%.o)
 CC = cc
-CFLAGS = -Wall -Wextra -Werror
+CFLAGS = -Wall -Wextra -Werror# -fsanitize=address
 RM = rm -rf
-INCLUDE = push_swap.h
+INCLUDE = mandatory/push_swap.h
 
 all: $(NAME)
 

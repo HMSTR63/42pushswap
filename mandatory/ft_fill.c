@@ -6,7 +6,7 @@
 /*   By: sojammal <sojammal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/02 17:29:48 by sojammal          #+#    #+#             */
-/*   Updated: 2025/02/06 17:15:33 by sojammal         ###   ########.fr       */
+/*   Updated: 2025/02/16 16:37:33 by sojammal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,8 +34,7 @@ void    ft_index_stack(t_stack *stack_a, int size)
     t_stack *temp;
     t_stack *high;
     int value;
-
-    while (--size > 0)
+    while (size-- > 0)
     {
         temp = stack_a;
         value = INT_MIN;
@@ -48,7 +47,6 @@ void    ft_index_stack(t_stack *stack_a, int size)
             {
                 value = temp->value;
                 high = temp;
-                temp = stack_a;
             }
             else
                 temp = temp->next;

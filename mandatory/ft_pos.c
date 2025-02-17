@@ -6,7 +6,7 @@
 /*   By: sojammal <sojammal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/06 23:06:38 by sojammal          #+#    #+#             */
-/*   Updated: 2025/02/07 18:47:34 by sojammal         ###   ########.fr       */
+/*   Updated: 2025/02/16 23:40:29 by sojammal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,5 +72,14 @@ void    ft_assign_pos(t_stack **stack_a, t_stack **stack_b)
         tmp->target = target;
         tmp = tmp->next;
     }
-    
 }
+/* Stack A contains
+value:     8   0   1   3
+index:    [6] [1] [2] [4]
+position: <0> <1> <2> <3>
+Stack B contains
+value:        2   6   9
+index:       [3] [5] [7]
+position:    <0> <1> <2>
+target pos.: (3) (0) (1)
+*/

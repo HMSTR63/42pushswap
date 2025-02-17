@@ -6,7 +6,7 @@
 /*   By: sojammal <sojammal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/02 00:15:12 by sojammal          #+#    #+#             */
-/*   Updated: 2025/02/10 18:35:44 by sojammal         ###   ########.fr       */
+/*   Updated: 2025/02/12 00:09:10 by sojammal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,7 +68,25 @@ static int  ft_is_duplicated(char **v)
     }
     return (1);
 }
+int    ft_is_space(char **v)
+{
+    int i;
+    int j;
 
+    i = 0;
+    while (v[i])
+    {
+        j = 0;
+        while (v[i][j])
+        {
+            if (v[i][j] == ' ')
+                return (1);
+            j++;
+        }
+        i++;
+    }
+    return (0);
+}
 
 void    ft_parsing(char **v)
 {
