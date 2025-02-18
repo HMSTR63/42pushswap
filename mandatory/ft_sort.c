@@ -6,7 +6,7 @@
 /*   By: sojammal <sojammal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/06 17:18:25 by sojammal          #+#    #+#             */
-/*   Updated: 2025/02/07 19:09:03 by sojammal         ###   ########.fr       */
+/*   Updated: 2025/02/18 16:40:39 by sojammal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,7 @@ static void	ft_push_to_b(t_stack **stack_a, t_stack **stack_b)
 		is_pushed++;
 	}
 }
+
 static int	ft_lowest_idx_pos(t_stack **stack)
 {
 	t_stack	*tmp;
@@ -59,6 +60,7 @@ static int	ft_lowest_idx_pos(t_stack **stack)
 	}
 	return (lowe_p);
 }
+
 static void	ft_stack_shift(t_stack **stack_a)
 {
 	int	size;
@@ -83,6 +85,7 @@ static void	ft_stack_shift(t_stack **stack_a)
 		}
 	}
 }
+
 void	ft_sort(t_stack **stack_a, t_stack **stack_b)
 {
 	ft_push_to_b(stack_a, stack_b);

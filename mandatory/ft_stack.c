@@ -6,7 +6,7 @@
 /*   By: sojammal <sojammal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/02 15:13:22 by sojammal          #+#    #+#             */
-/*   Updated: 2025/02/10 18:36:06 by sojammal         ###   ########.fr       */
+/*   Updated: 2025/02/18 16:40:58 by sojammal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@ static int	ft_is_full_space(char *s)
 		return (1);
 	return (0);
 }
+
 static char	*ft_join_args(char **v)
 {
 	char	*tmp;
@@ -37,6 +38,7 @@ static char	*ft_join_args(char **v)
 	}
 	return (tmp);
 }
+
 char	**ft_stack(char **v)
 {
 	char	**str;

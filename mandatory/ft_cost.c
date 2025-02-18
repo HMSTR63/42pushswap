@@ -6,7 +6,7 @@
 /*   By: sojammal <sojammal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/06 23:33:59 by sojammal          #+#    #+#             */
-/*   Updated: 2025/02/07 18:06:35 by sojammal         ###   ########.fr       */
+/*   Updated: 2025/02/18 16:27:59 by sojammal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,10 +35,10 @@ void	ft_cost(t_stack **stack_a, t_stack **stack_b)
 
 void	ft_cheapest(t_stack **stack_a, t_stack **stack_b)
 {
-	t_stack *tmp;
-	int cheapest;
-	int a_cost;
-	int b_cost;
+	t_stack	*tmp;
+	int		cheapest;
+	int		a_cost;
+	int		b_cost;
 
 	a_cost = 0;
 	b_cost = 0;

@@ -6,7 +6,7 @@
 /*   By: sojammal <sojammal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/01 22:16:40 by sojammal          #+#    #+#             */
-/*   Updated: 2025/02/07 19:06:38 by sojammal         ###   ########.fr       */
+/*   Updated: 2025/02/18 16:28:13 by sojammal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,12 +18,14 @@ t_stack	*ft_last(t_stack *stack)
 		stack = stack->next;
 	return (stack);
 }
+
 t_stack	*ft_before_last(t_stack *stack)
 {
 	while (stack && stack->next && stack->next->next)
 		stack = stack->next;
 	return (stack);
 }
+
 int	ft_size(t_stack *stack)
 {
 	int	size;
@@ -38,6 +40,7 @@ int	ft_size(t_stack *stack)
 	}
 	return (size);
 }
+
 void	ft_lst_add_back(t_stack **stack, t_stack *new)
 {
 	t_stack	*last;
@@ -52,6 +55,7 @@ void	ft_lst_add_back(t_stack **stack, t_stack *new)
 	last = ft_last(*stack);
 	last->next = new;
 }
+
 t_stack	*ft_lst_new(int value)
 {
 	t_stack	*new;

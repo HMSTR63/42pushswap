@@ -6,7 +6,7 @@
 /*   By: sojammal <sojammal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/10 15:21:48 by sojammal          #+#    #+#             */
-/*   Updated: 2025/02/18 15:38:17 by sojammal         ###   ########.fr       */
+/*   Updated: 2025/02/18 16:19:14 by sojammal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -93,7 +93,7 @@ char	*get_next_line(int fd)
 	static char	*buffer = NULL;
 	char		*line;
 
-	if (fd < 0 || BUFFER_SIZE <= 0 )
+	if (fd < 0 || BUFFER_SIZE <= 0)
 		return (NULL);
 	buffer = read_from_fd(fd, buffer);
 	if (!buffer)

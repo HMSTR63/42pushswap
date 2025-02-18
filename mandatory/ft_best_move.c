@@ -6,7 +6,7 @@
 /*   By: sojammal <sojammal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/06 23:46:44 by sojammal          #+#    #+#             */
-/*   Updated: 2025/02/07 19:02:41 by sojammal         ###   ########.fr       */
+/*   Updated: 2025/02/18 16:27:27 by sojammal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@ static void	rev_rotate_both(t_stack **stack_a, t_stack **stack_b, int *a_cost,
 		ft_rrr(stack_a, stack_b);
 	}
 }
+
 static void	rotate_both(t_stack **stack_a, t_stack **stack_b, int *a_cost,
 		int *b_cost)
 {

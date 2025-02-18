@@ -6,7 +6,7 @@
 /*   By: sojammal <sojammal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/01 20:20:12 by sojammal          #+#    #+#             */
-/*   Updated: 2025/02/17 23:58:46 by sojammal         ###   ########.fr       */
+/*   Updated: 2025/02/18 16:26:15 by sojammal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,13 +52,12 @@ void				ft_rrb(t_stack **stack_b);
 void				ft_rrr(t_stack **stack_a, t_stack **stack_b);
 
 // utils
-char				*ft_gnl_strdup(char *s);
+char				*ft_strdup(char *s);
 void				ft_putstr_fd(char *str, int fd);
 void				ft_putchar_fd(char c, int fd);
 int					ft_is_digit(char c);
 int					ft_is_signed(char c);
 int					ft_strlen(const char *s);
-char				*ft_strdup(const char *s1);
 size_t				ft_strlcpy(char *dst, const char *src, size_t dstsize);
 int					ft_abs(int n);
 int					ft_strcmp(const char *s1, const char *s2);
@@ -66,13 +65,14 @@ void				ft_read(char *line, t_stack **stack_a, t_stack **stack_b);
 void				ft_free_stack(t_stack **stack);
 
 // parsing
-char				*ft_strjoin(char *s1, const char *s2);
+char				*ft_strjoin(char *s1, char *s2);
 void				ft_parsing(char **v);
 char				**ft_stack(char **v);
 int					ft_atoi(const char *str);
 char				**ft_split(const char *s, char c);
 int					ft_is_sorted(t_stack *stack);
 void				ft_error(void);
+size_t				ft_strlcpy(char *dst, const char *src, size_t dstsize);
 
 // stack
 void				ft_fill_stack(char **str, t_stack **stack);

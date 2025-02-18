@@ -6,7 +6,7 @@
 /*   By: sojammal <sojammal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/17 22:23:07 by sojammal          #+#    #+#             */
-/*   Updated: 2025/02/18 00:23:01 by sojammal         ###   ########.fr       */
+/*   Updated: 2025/02/18 16:15:59 by sojammal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@ static void	free_arr(char **v)
 	}
 	free(v);
 }
+
 static void	ft_operations(char *line, t_stack **stack_a, t_stack **stack_b)
 {
 	if (!ft_strcmp(line, "sa\n"))
@@ -51,6 +52,7 @@ static void	ft_operations(char *line, t_stack **stack_a, t_stack **stack_b)
 	else
 		ft_error();
 }
+
 void	ft_read(char *line, t_stack **stack_a, t_stack **stack_b)
 {
 	line = get_next_line(0);
@@ -68,18 +70,15 @@ void	ft_read(char *line, t_stack **stack_a, t_stack **stack_b)
 	else
 		ft_putstr_fd("KO\n", 1);
 }
-static void	f(void)
-{
-	system("leaks checker");
-}
+
 int	main(int c, char **v)
 {
-	atexit(f);
-	t_stack *stack_a;
-	t_stack *stack_b;
-	char **str = NULL;
-	char *line;
+	t_stack	*stack_a;
+	t_stack	*stack_b;
+	char	**str;
+	char	*line;
 
+	str = NULL;
 	line = NULL;
 	stack_a = NULL;
 	stack_b = NULL;
@@ -87,8 +86,6 @@ int	main(int c, char **v)
 	{
 		str = ft_stack(v);
 		ft_parsing(str);
-		// if (!str)
-		// 	return (1);
 		ft_fill_stack(str, &stack_a);
 		free_arr(str);
 		ft_read(line, &stack_a, &stack_b);

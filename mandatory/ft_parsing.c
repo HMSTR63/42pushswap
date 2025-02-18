@@ -6,7 +6,7 @@
 /*   By: sojammal <sojammal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/02 00:15:12 by sojammal          #+#    #+#             */
-/*   Updated: 2025/02/12 00:09:10 by sojammal         ###   ########.fr       */
+/*   Updated: 2025/02/18 16:28:37 by sojammal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@ int	ft_is_sorted(t_stack *stack)
 	}
 	return (1);
 }
+
 static int	ft_valid_args(char **v)
 {
 	int	i;
@@ -49,6 +50,7 @@ static int	ft_valid_args(char **v)
 	}
 	return (1);
 }
+
 static int	ft_is_duplicated(char **v)
 {
 	int	i;
@@ -68,6 +70,7 @@ static int	ft_is_duplicated(char **v)
 	}
 	return (1);
 }
+
 int	ft_is_space(char **v)
 {
 	int	i;

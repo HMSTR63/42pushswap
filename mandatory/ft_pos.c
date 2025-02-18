@@ -6,7 +6,7 @@
 /*   By: sojammal <sojammal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/06 23:06:38 by sojammal          #+#    #+#             */
-/*   Updated: 2025/02/16 23:40:29 by sojammal         ###   ########.fr       */
+/*   Updated: 2025/02/18 16:39:32 by sojammal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ void	ft_positon(t_stack **stack)
 }
 
 static int	ft_target(t_stack **stack_a, int b_index, int target_index,
-		int target_pos)
+				int target_pos)
 {
 	t_stack	*tmp;
 
@@ -42,18 +42,17 @@ static int	ft_target(t_stack **stack_a, int b_index, int target_index,
 		}
 		tmp = tmp->next;
 	}
-	if (target_index == INT_MAX)
+	if (target_index != INT_MAX)
+		return (target_pos);
+	tmp = *stack_a;
+	while (tmp)
 	{
-		tmp = *stack_a;
-		while (tmp)
+		if (tmp->index < target_index)
 		{
-			if (tmp->index < target_index)
-			{
-				target_index = tmp->index;
-				target_pos = tmp->pos;
-			}
-			tmp = tmp->next;
+			target_index = tmp->index;
+			target_pos = tmp->pos;
 		}
+		tmp = tmp->next;
 	}
 	return (target_pos);
 }
@@ -74,13 +73,3 @@ void	ft_assign_pos(t_stack **stack_a, t_stack **stack_b)
 		tmp = tmp->next;
 	}
 }
-/* Stack A contains
-value:     8   0   1   3
-index:    [6] [1] [2] [4]
-position: <0> <1> <2> <3>
-Stack B contains
-value:        2   6   9
-index:       [3] [5] [7]
-position:    <0> <1> <2>
-target pos.: (3) (0) (1)
-*/

@@ -6,7 +6,7 @@
 /*   By: sojammal <sojammal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/02 00:14:25 by sojammal          #+#    #+#             */
-/*   Updated: 2025/02/17 23:10:07 by sojammal         ###   ########.fr       */
+/*   Updated: 2025/02/18 16:44:28 by sojammal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,17 +34,13 @@ static void	free_arr(char **v)
 	}
 	free(v);
 }
-// void	f(void)
-// {
-// 	system("leaks push_swap");
-// }
+
 int	main(int c, char **v)
 {
 	t_stack	*stack_a;
 	t_stack	*stack_b;
 	char	**str;
 
-	// atexit(f);
 	str = NULL;
 	stack_a = NULL;
 	stack_b = NULL;
@@ -52,8 +48,6 @@ int	main(int c, char **v)
 	{
 		str = ft_stack(v);
 		ft_parsing(str);
-		// if (!str)
-		// 	return (1);
 		ft_fill_stack(str, &stack_a);
 		free_arr(str);
 		ft_index_stack(stack_a, ft_size(stack_a));

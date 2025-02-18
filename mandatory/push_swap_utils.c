@@ -6,7 +6,7 @@
 /*   By: sojammal <sojammal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/01 20:29:07 by sojammal          #+#    #+#             */
-/*   Updated: 2025/02/07 22:31:33 by sojammal         ###   ########.fr       */
+/*   Updated: 2025/02/18 16:44:42 by sojammal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,12 +25,14 @@ void	ft_putstr_fd(char *s, int fd)
 		i++;
 	}
 }
+
 void	ft_putchar_fd(char c, int fd)
 {
 	if (fd < 0)
 		return ;
 	write(fd, &c, 1);
 }
+
 void	ft_free_stack(t_stack **stack)
 {
 	t_stack	*temp;
@@ -45,6 +47,7 @@ void	ft_free_stack(t_stack **stack)
 	}
 	*stack = NULL;
 }
+
 size_t	ft_strlen(const char *s)
 {
 	size_t	i;
@@ -54,6 +57,7 @@ size_t	ft_strlen(const char *s)
 		i++;
 	return (i);
 }
+
 int	ft_abs(int n)
 {
 	if (n < 0)

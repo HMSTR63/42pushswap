@@ -6,7 +6,7 @@
 /*   By: sojammal <sojammal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/10 15:20:25 by sojammal          #+#    #+#             */
-/*   Updated: 2025/02/17 23:52:10 by sojammal         ###   ########.fr       */
+/*   Updated: 2025/02/18 16:21:28 by sojammal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ int	len_at_newline(char *line, int i)
 	return (i);
 }
 
-char	*ft_gnl_strdup(char *s)
+char	*ft_strdup(char *s)
 {
 	int		i;
 	char	*d;
@@ -52,7 +52,7 @@ char	*ft_strchr(char *s, int c)
 	return (NULL);
 }
 
-char	*ft_gnl_strjoin(char *s1, char *s2)
+char	*ft_strjoin(char *s1, char *s2)
 {
 	char	*str;
 	size_t	i;

@@ -6,7 +6,7 @@
 /*   By: sojammal <sojammal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/02 17:12:20 by sojammal          #+#    #+#             */
-/*   Updated: 2025/02/02 21:51:03 by sojammal         ###   ########.fr       */
+/*   Updated: 2025/02/18 16:40:48 by sojammal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,6 +47,7 @@ static void	ft_free_list(char **list)
 	}
 	free(list);
 }
+
 static char	*ft_substr(const char *s, unsigned int start, size_t len)
 {
 	size_t	s_l;
@@ -66,6 +67,7 @@ static char	*ft_substr(const char *s, unsigned int start, size_t len)
 	sub[len] = '\0';
 	return (sub);
 }
+
 static char	**ft_stor_list(char **list, const char *s, char c)
 {
 	size_t	i;

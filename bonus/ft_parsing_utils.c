@@ -6,7 +6,7 @@
 /*   By: sojammal <sojammal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/02 16:23:20 by sojammal          #+#    #+#             */
-/*   Updated: 2025/02/17 23:17:42 by sojammal         ###   ########.fr       */
+/*   Updated: 2025/02/18 16:26:41 by sojammal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@ void	ft_error(void)
 	ft_putstr_fd("Error\n", 2);
 	exit(1);
 }
+
 int	ft_is_digit(char c)
 {
 	return (c >= '0' && c <= '9');
@@ -25,4 +26,23 @@ int	ft_is_digit(char c)
 int	ft_is_signed(char c)
 {
 	return (c == '-' || c == '+');
+}
+
+size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
+{
+	size_t	srcl;
+	size_t	i;
+
+	srcl = ft_strlen(src);
+	i = 0;
+	if (dstsize > 0 && src)
+	{
+		while (i < dstsize - 1 && src[i])
+		{
+			dst[i] = src[i];
+			i++;
+		}
+		dst[i] = '\0';
+	}
+	return (srcl);
 }
