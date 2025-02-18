@@ -6,7 +6,7 @@
 /*   By: sojammal <sojammal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/02 00:08:40 by sojammal          #+#    #+#             */
-/*   Updated: 2025/02/18 16:40:22 by sojammal         ###   ########.fr       */
+/*   Updated: 2025/02/18 19:22:06 by sojammal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@ static void	ft_reverse_rotate(t_stack **stack)
 	t_stack	*last;
 	t_stack	*before_last;
 
+	if (!*stack || !(*stack)->next)
+		return ;
 	last = ft_last(*stack);
 	before_last = ft_before_last(*stack);
 	temp = *stack;

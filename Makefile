@@ -24,7 +24,7 @@ $(NAME_B): $(OBJ_B)
 	$(CC) $(CFLAGS) $^ -o $@
 
 %_bonus.o: %_bonus.c $(INCLUDE_B)
-	$(CC) $(CFLAGS) -c $< -o $@
+	$(CC) $(CFLAGS) -g  -c $< -o $@
 
 clean:
 	$(RM) $(OBJ_M) $(OBJ_B)
