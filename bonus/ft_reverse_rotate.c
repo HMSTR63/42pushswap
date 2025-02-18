@@ -12,32 +12,32 @@
 
 #include "push_swap_bonus.h"
 
-static void    ft_reverse_rotate(t_stack **stack)
+static void	ft_reverse_rotate(t_stack **stack)
 {
-    t_stack *temp;
-    t_stack *last;
-    t_stack *before_last;
+	t_stack	*temp;
+	t_stack	*last;
+	t_stack	*before_last;
 
-    last = ft_last(*stack);
-    before_last = ft_before_last(*stack);
-    temp = *stack;
-    *stack = last;
-    (*stack)->next = temp;
-    before_last->next = NULL;
+	last = ft_last(*stack);
+	before_last = ft_before_last(*stack);
+	temp = *stack;
+	*stack = last;
+	(*stack)->next = temp;
+	before_last->next = NULL;
 }
 
-void  ft_rra(t_stack **stack_a)
+void	ft_rra(t_stack **stack_a)
 {
-    ft_reverse_rotate(stack_a);
+	ft_reverse_rotate(stack_a);
 }
 
-void  ft_rrb(t_stack **stack_b)
+void	ft_rrb(t_stack **stack_b)
 {
-    ft_reverse_rotate(stack_b);
+	ft_reverse_rotate(stack_b);
 }
 
-void  ft_rrr(t_stack **stack_a, t_stack **stack_b)
+void	ft_rrr(t_stack **stack_a, t_stack **stack_b)
 {
-    ft_reverse_rotate(stack_a);
-    ft_reverse_rotate(stack_b);
+	ft_reverse_rotate(stack_a);
+	ft_reverse_rotate(stack_b);
 }

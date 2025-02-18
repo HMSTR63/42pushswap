@@ -12,9 +12,11 @@
 
 #include "push_swap_bonus.h"
 
-static void free_arr(char **v)
+static void	free_arr(char **v)
 {
-	int i = 0;
+	int	i;
+
+	i = 0;
 	while (v[i])
 	{
 		free(v[i]);
@@ -22,7 +24,7 @@ static void free_arr(char **v)
 	}
 	free(v);
 }
-static void ft_operations(char *line, t_stack **stack_a, t_stack **stack_b)
+static void	ft_operations(char *line, t_stack **stack_a, t_stack **stack_b)
 {
 	if (!ft_strcmp(line, "sa\n"))
 		ft_sa(stack_a);
@@ -49,7 +51,7 @@ static void ft_operations(char *line, t_stack **stack_a, t_stack **stack_b)
 	else
 		ft_error();
 }
-void ft_read(char *line, t_stack **stack_a, t_stack **stack_b)
+void	ft_read(char *line, t_stack **stack_a, t_stack **stack_b)
 {
 	line = get_next_line(0);
 	while (line)
@@ -66,18 +68,18 @@ void ft_read(char *line, t_stack **stack_a, t_stack **stack_b)
 	else
 		ft_putstr_fd("KO\n", 1);
 }
-static void f(void)
+static void	f(void)
 {
 	system("leaks checker");
 }
-int main(int c, char **v)
+int	main(int c, char **v)
 {
-	atexit(f);	
+	atexit(f);
 	t_stack *stack_a;
 	t_stack *stack_b;
-	char	**str = NULL;
+	char **str = NULL;
 	char *line;
-	
+
 	line = NULL;
 	stack_a = NULL;
 	stack_b = NULL;

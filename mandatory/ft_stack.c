@@ -12,7 +12,7 @@
 
 #include "push_swap.h"
 
-static int ft_is_full_space(char *s)
+static int	ft_is_full_space(char *s)
 {
 	while (*s == ' ')
 		s++;
@@ -48,4 +48,3 @@ char	**ft_stack(char **v)
 	free(s);
 	return (str);
 }
-

@@ -14,7 +14,7 @@
 
 static void	ft_swap(t_stack *stack)
 {
-	int temp;
+	int	temp;
 
 	if (!stack || !stack->next)
 		return ;
@@ -26,19 +26,19 @@ static void	ft_swap(t_stack *stack)
 	stack->next->index = temp;
 }
 
-void  ft_sa(t_stack **stack_a)
+void	ft_sa(t_stack **stack_a)
 {
 	ft_swap(*stack_a);
 	ft_putstr_fd("sa\n", 1);
 }
 
-void  ft_sb(t_stack **stack_b)
+void	ft_sb(t_stack **stack_b)
 {
 	ft_swap(*stack_b);
 	ft_putstr_fd("sb\n", 1);
 }
 
-void  ft_ss(t_stack **stack_a, t_stack **stack_b)
+void	ft_ss(t_stack **stack_a, t_stack **stack_b)
 {
 	ft_swap(*stack_a);
 	ft_swap(*stack_b);

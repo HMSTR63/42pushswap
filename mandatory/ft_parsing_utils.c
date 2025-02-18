@@ -11,17 +11,18 @@
 /* ************************************************************************** */
 
 #include "push_swap.h"
-void ft_error(void)
+
+void	ft_error(void)
 {
-    ft_putstr_fd("Error\n", 2);
-    exit(1);
+	ft_putstr_fd("Error\n", 2);
+	exit(1);
 }
-int ft_is_digit(char c)
+int	ft_is_digit(char c)
 {
-    return (c >= '0' && c <= '9');
+	return (c >= '0' && c <= '9');
 }
 
-int ft_is_signed(char c)
+int	ft_is_signed(char c)
 {
-    return (c == '-' || c == '+');
+	return (c == '-' || c == '+');
 }

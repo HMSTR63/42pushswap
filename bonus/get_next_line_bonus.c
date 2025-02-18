@@ -6,7 +6,7 @@
 /*   By: sojammal <sojammal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/10 15:21:48 by sojammal          #+#    #+#             */
-/*   Updated: 2025/02/17 22:37:14 by sojammal         ###   ########.fr       */
+/*   Updated: 2025/02/18 15:38:17 by sojammal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -90,20 +90,19 @@ char	*clean_up_buffer(char *line)
 
 char	*get_next_line(int fd)
 {
-	static char	*buffer[OPEN_MAX];
+	static char	*buffer = NULL;
 	char		*line;
 
-	if (fd < 0 || BUFFER_SIZE <= 0 || BUFFER_SIZE > INT_MAX)
+	if (fd < 0 || BUFFER_SIZE <= 0 )
 		return (NULL);
-	buffer[fd] = read_from_fd(fd, buffer[fd]);
-	if (!buffer[fd])
+	buffer = read_from_fd(fd, buffer);
+	if (!buffer)
 		return (NULL);
-	line = extract_line(buffer[fd]);
-	buffer[fd] = clean_up_buffer(buffer[fd]);
-	if (!line && buffer[fd])
-	{
-		free(buffer[fd]);
-		buffer[fd] = NULL;
-	}
+	line = extract_line(buffer);
+	if (!line)
+		return (free(buffer), buffer = NULL, NULL);
+	buffer = clean_up_buffer(buffer);
+	if (!line && buffer)
+		return (free(buffer), buffer = NULL, NULL);
 	return (line);
 }

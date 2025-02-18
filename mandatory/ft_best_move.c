@@ -12,7 +12,8 @@
 
 #include "push_swap.h"
 
-static void rev_rotate_both(t_stack **stack_a, t_stack **stack_b, int *a_cost, int *b_cost)
+static void	rev_rotate_both(t_stack **stack_a, t_stack **stack_b, int *a_cost,
+		int *b_cost)
 {
 	while (*a_cost < 0 && *b_cost < 0)
 	{
@@ -21,7 +22,8 @@ static void rev_rotate_both(t_stack **stack_a, t_stack **stack_b, int *a_cost, i
 		ft_rrr(stack_a, stack_b);
 	}
 }
-static void rotate_both(t_stack **stack_a, t_stack **stack_b, int *a_cost, int *b_cost)
+static void	rotate_both(t_stack **stack_a, t_stack **stack_b, int *a_cost,
+		int *b_cost)
 {
 	while (*a_cost > 0 && *b_cost > 0)
 	{
@@ -31,7 +33,7 @@ static void rotate_both(t_stack **stack_a, t_stack **stack_b, int *a_cost, int *
 	}
 }
 
-static void rotate_a(t_stack **stack_a, int *cost)
+static void	rotate_a(t_stack **stack_a, int *cost)
 {
 	while (*cost)
 	{
@@ -48,7 +50,7 @@ static void rotate_a(t_stack **stack_a, int *cost)
 	}
 }
 
-static void rotate_b(t_stack **stack_b, int *b_cost)
+static void	rotate_b(t_stack **stack_b, int *b_cost)
 {
 	while (*b_cost)
 	{
@@ -65,7 +67,8 @@ static void rotate_b(t_stack **stack_b, int *b_cost)
 	}
 }
 
-void	ft_best_move(t_stack **stack_a, t_stack **stack_b, int a_cost, int b_cost)
+void	ft_best_move(t_stack **stack_a, t_stack **stack_b, int a_cost,
+		int b_cost)
 {
 	if (a_cost < 0 && b_cost < 0)
 		rev_rotate_both(stack_a, stack_b, &a_cost, &b_cost);

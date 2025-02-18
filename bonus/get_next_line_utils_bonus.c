@@ -68,7 +68,7 @@ char	*ft_gnl_strjoin(char *s1, char *s2)
 	if (!s2)
 		return (ft_strdup(s1));
 	len = ft_strlen(s1) + ft_strlen(s2);
-	str = malloc ((len + 1) * sizeof(char));
+	str = malloc((len + 1) * sizeof(char));
 	if (!str)
 		return (free(s1), NULL);
 	while (s1[i])
@@ -77,6 +77,6 @@ char	*ft_gnl_strjoin(char *s1, char *s2)
 	while (s2[i])
 		str[j++] = s2[i++];
 	str[j] = '\0';
-	free (s1);
+	free(s1);
 	return (str);
 }

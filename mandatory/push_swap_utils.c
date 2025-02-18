@@ -31,9 +31,9 @@ void	ft_putchar_fd(char c, int fd)
 		return ;
 	write(fd, &c, 1);
 }
-void ft_free_stack(t_stack **stack)
+void	ft_free_stack(t_stack **stack)
 {
-	t_stack *temp;
+	t_stack	*temp;
 
 	if (!stack || !(*stack))
 		return ;
@@ -54,7 +54,7 @@ size_t	ft_strlen(const char *s)
 		i++;
 	return (i);
 }
-int ft_abs(int n)
+int	ft_abs(int n)
 {
 	if (n < 0)
 		return (-n);
