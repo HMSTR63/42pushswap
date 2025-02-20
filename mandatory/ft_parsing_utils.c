@@ -6,7 +6,7 @@
 /*   By: sojammal <sojammal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/02 16:23:20 by sojammal          #+#    #+#             */
-/*   Updated: 2025/02/18 16:43:54 by sojammal         ###   ########.fr       */
+/*   Updated: 2025/02/19 23:46:29 by sojammal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,6 @@
 void	ft_error(void)
 {
 	ft_putstr_fd("Error\n", 2);
-	exit(1);
 }
 
 int	ft_is_digit(char c)

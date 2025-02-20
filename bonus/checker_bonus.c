@@ -6,13 +6,13 @@
 /*   By: sojammal <sojammal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/17 22:23:07 by sojammal          #+#    #+#             */
-/*   Updated: 2025/02/18 22:38:41 by sojammal         ###   ########.fr       */
+/*   Updated: 2025/02/20 15:52:31 by sojammal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap_bonus.h"
 
-static void	free_arr(char **v)
+void	free_arr(char **v)
 {
 	int	i;
 
@@ -23,6 +23,16 @@ static void	free_arr(char **v)
 		i++;
 	}
 	free(v);
+}
+
+static void	ft_error2(char *line, t_stack **stack_a, t_stack **stack_b)
+{
+	ft_error();
+	free(line);
+	ft_free_stack(stack_a);
+	ft_free_stack(stack_b);
+	get_next_line(-100);
+	exit(1);
 }
 
 static void	ft_operations(char *line, t_stack **stack_a, t_stack **stack_b)
@@ -50,7 +60,7 @@ static void	ft_operations(char *line, t_stack **stack_a, t_stack **stack_b)
 	else if (!ft_strcmp(line, "rrr\n"))
 		ft_rrr(stack_a, stack_b);
 	else
-		ft_error();
+		ft_error2(line, stack_a, stack_b);
 }
 
 void	ft_read(char *line, t_stack **stack_a, t_stack **stack_b)

@@ -6,7 +6,7 @@
 /*   By: sojammal <sojammal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/02 15:13:22 by sojammal          #+#    #+#             */
-/*   Updated: 2025/02/18 16:18:04 by sojammal         ###   ########.fr       */
+/*   Updated: 2025/02/20 14:55:41 by sojammal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,11 @@ static char	*ft_join_args(char **v)
 	while (v[i])
 	{
 		if (ft_is_full_space(v[i]))
-			return (NULL);
+		{
+			ft_error();
+			free(tmp);
+			exit(1);
+		}
 		tmp = ft_strjoin(tmp, v[i]);
 		tmp = ft_strjoin(tmp, " ");
 		i++;

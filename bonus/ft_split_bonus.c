@@ -6,7 +6,7 @@
 /*   By: sojammal <sojammal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/02 17:12:20 by sojammal          #+#    #+#             */
-/*   Updated: 2025/02/18 16:17:56 by sojammal         ###   ########.fr       */
+/*   Updated: 2025/02/19 23:15:07 by sojammal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,7 +62,7 @@ static char	*ft_substr(const char *s, unsigned int start, size_t len)
 		len = s_l - start;
 	sub = (char *)malloc(len + 1);
 	if (!sub)
-		return (NULL);
+		return (free(sub), NULL);
 	ft_strlcpy(sub, &s[start], len + 1);
 	sub[len] = '\0';
 	return (sub);

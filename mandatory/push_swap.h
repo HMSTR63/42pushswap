@@ -6,7 +6,7 @@
 /*   By: sojammal <sojammal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/01 20:20:12 by sojammal          #+#    #+#             */
-/*   Updated: 2025/02/18 19:02:49 by sojammal         ###   ########.fr       */
+/*   Updated: 2025/02/20 15:33:53 by sojammal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,7 @@ size_t				ft_strlen(const char *s);
 char				*ft_strdup(const char *s1);
 size_t				ft_strlcpy(char *dst, const char *src, size_t dstsize);
 int					ft_abs(int n);
-
+void				free_arr(char **v);
 // parsing
 char				*ft_strjoin(char *s1, char *s2);
 size_t				ft_strlcpy(char *dst, const char *src, size_t dstsize);
@@ -61,6 +61,7 @@ int					ft_atoi(const char *str);
 char				**ft_split(const char *s, char c);
 int					ft_is_sorted(t_stack *stack);
 void				ft_error(void);
+int					validnum(const char *str);
 // stack
 void				ft_fill_stack(char **str, t_stack **stack);
 void				ft_free_stack(t_stack **stack);

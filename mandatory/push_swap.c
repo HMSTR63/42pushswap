@@ -6,7 +6,7 @@
 /*   By: sojammal <sojammal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/02 00:14:25 by sojammal          #+#    #+#             */
-/*   Updated: 2025/02/18 19:21:38 by sojammal         ###   ########.fr       */
+/*   Updated: 2025/02/19 23:25:39 by sojammal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ static void	ft_push_swap(t_stack **stack_a, t_stack **stack_b, int size)
 		ft_sort(stack_a, stack_b);
 }
 
-static void	free_arr(char **v)
+void	free_arr(char **v)
 {
 	int	i;
 

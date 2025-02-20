@@ -6,7 +6,7 @@
 /*   By: sojammal <sojammal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/02 00:15:12 by sojammal          #+#    #+#             */
-/*   Updated: 2025/02/18 16:28:37 by sojammal         ###   ########.fr       */
+/*   Updated: 2025/02/20 15:38:29 by sojammal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,18 +32,12 @@ static int	ft_valid_args(char **v)
 	while (v[i])
 	{
 		j = 0;
+		if (ft_is_signed(v[i][j]))
+			j++;
 		while (v[i][j])
 		{
 			if (!ft_is_digit(v[i][j]))
-			{
-				if (v[i][j] == '-' || v[i][j] == '+')
-				{
-					if (ft_is_digit(v[i][j - 1]) || !ft_is_digit(v[i][j + 1]))
-						return (0);
-				}
-				else
-					return (0);
-			}
+				return (0);
 			j++;
 		}
 		i++;
@@ -71,32 +65,24 @@ static int	ft_is_duplicated(char **v)
 	return (1);
 }
 
-int	ft_is_space(char **v)
-{
-	int	i;
-	int	j;
-
-	i = 0;
-	while (v[i])
-	{
-		j = 0;
-		while (v[i][j])
-		{
-			if (v[i][j] == ' ')
-				return (1);
-			j++;
-		}
-		i++;
-	}
-	return (0);
-}
-
 void	ft_parsing(char **v)
 {
 	if (!v)
-		return (ft_error(), free(v));
+	{
+		free_arr(v);
+		ft_error();
+		exit(1);
+	}
 	if (!ft_valid_args(v))
-		return (ft_error(), free(v));
+	{
+		free_arr(v);
+		ft_error();
+		exit(1);
+	}
 	if (!ft_is_duplicated(v))
-		return (ft_error(), free(v));
+	{
+		free_arr(v);
+		ft_error();
+		exit(1);
+	}
 }

@@ -1,38 +1,47 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   ft_parsing_utils.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sojammal <sojammal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/02/02 17:08:07 by sojammal          #+#    #+#             */
-/*   Updated: 2025/02/17 22:36:17 by sojammal         ###   ########.fr       */
+/*   Created: 2025/02/02 16:23:20 by sojammal          #+#    #+#             */
+/*   Updated: 2025/02/20 00:02:15 by sojammal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap_bonus.h"
 
-int	ft_atoi(const char *str)
+void	ft_error(void)
 {
-	long	res;
-	int		i;
-	int		sign;
+	ft_putstr_fd("Error\n", 2);
+}
 
-	res = 0;
+int	ft_is_digit(char c)
+{
+	return (c >= '0' && c <= '9');
+}
+
+int	ft_is_signed(char c)
+{
+	return (c == '-' || c == '+');
+}
+
+size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
+{
+	size_t	srcl;
+	size_t	i;
+
+	srcl = ft_strlen(src);
 	i = 0;
-	sign = 1;
-	while (str[i] == ' ' || (str[i] >= '\t' && str[i] <= '\r'))
-		i++;
-	if (str[i] == '+' || str[i] == '-')
+	if (dstsize > 0 && src)
 	{
-		if (str[i++] == '-')
-			sign *= -1;
+		while (i < dstsize - 1 && src[i])
+		{
+			dst[i] = src[i];
+			i++;
+		}
+		dst[i] = '\0';
 	}
-	while (str[i] && ft_is_digit(str[i]))
-	{
-		res = (res * 10) + (str[i++] - '0');
-		if ((res * sign) > 2147483647 || (res * sign) < -2147483648)
-			ft_error();
-	}
-	return (res * sign);
+	return (srcl);
 }
