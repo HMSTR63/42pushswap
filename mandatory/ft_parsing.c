@@ -6,7 +6,7 @@
 /*   By: sojammal <sojammal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/02 00:15:12 by sojammal          #+#    #+#             */
-/*   Updated: 2025/02/20 15:38:29 by sojammal         ###   ########.fr       */
+/*   Updated: 2025/02/21 01:36:56 by sojammal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,11 @@ static int	ft_valid_args(char **v)
 	{
 		j = 0;
 		if (ft_is_signed(v[i][j]))
+		{
+			if (!v[i][j + 1])
+				return (0);
 			j++;
+		}
 		while (v[i][j])
 		{
 			if (!ft_is_digit(v[i][j]))
